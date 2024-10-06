@@ -4,10 +4,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 import br.com.alura.tabela_fipe_service.model.DadosBasicos;
-import br.com.alura.tabela_fipe_service.model.Modelos;
+import br.com.alura.tabela_fipe_service.model.Veiculo;
 
 public class Console {
     private Scanner scanner = new Scanner(System.in);
@@ -94,5 +93,11 @@ public class Console {
 		}
 
         return finalCodigoCarro;
+    }
+
+    public void exibirComparacaoVeiculos(List<Veiculo> listVeiculos) {
+        String tituloComparacao = "\nComparação de veículos " + listVeiculos.get(0).modelo() + ":";
+		System.out.println(tituloComparacao.toUpperCase());
+		listVeiculos.forEach(System.out::println);
     }
 }
